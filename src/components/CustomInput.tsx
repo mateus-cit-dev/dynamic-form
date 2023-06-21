@@ -1,6 +1,7 @@
 import { ErrorMessage, useField } from "formik"
-
+import { TextField, Button, Typography, FormControl, RadioGroup, FormControlLabel, Radio } from '@mui/material';
 interface Props {
+    variant?: 'standard';
     name: string;
     type: string;
     placeholder?: string;
@@ -13,7 +14,11 @@ export const CustomTextInput = (props: Props) => {
 
     return (
         <>
-            <input {...field} {...props} />
+            <TextField 
+               fullWidth
+          margin="normal"
+             variant="standard"
+            {...field} {...props} />
             <ErrorMessage name={props.name} component="span" className="error" />
         </>
     )

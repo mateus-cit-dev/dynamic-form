@@ -8,6 +8,10 @@ export interface InputProps {
     typeValue?: 'string' | 'boolean'
     label?: string
     options?: Opt[]
+    mask?: string
+    fullWidth?: boolean
+    margin ?:  string
+    variant?: string
 }
 
 export interface Opt {
@@ -138,6 +142,26 @@ export const forms: { [x: string]: InputProps[] } =
                     message: "Accept the terms!"
                 }
             ]
+        },
+    ],
+    register: [
+        {
+            type: "text",
+            name: "cnpj",
+            placeholder: "CNPJ",
+            value: "",
+            validations: [
+                {
+                    type: "minLength",
+                    value: 13,
+                    message: "CNPJ deve ter 13 caracteres",
+                },
+                {
+                    type: "required",
+                    message: "CNPJ é um campo obrigatório"
+                },
+            ],
+
         },
     ],
 }

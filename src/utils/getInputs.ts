@@ -47,3 +47,30 @@ export const getInputs = (section: Form) => {
     };
 
 };
+
+type RegisterForm = 'Register'
+
+export const getRegisterInputs = (section: RegisterForm) => {
+
+    let initialValues: { [key: string]: any } = {};
+
+    let validationsFields: { [key: string]: any } = {};
+
+    for (const field of forms['register']) {
+
+        initialValues[field.name] = field.value;
+
+        if (!field.validations) continue;
+
+        const schema = generateValidations(field)
+
+        validationsFields[field.name] = schema;
+    }
+
+    return {
+        validationSchema: Yup.object({ ...validationsFields }),
+        initialValues,
+        inputs: forms['register'],
+    };
+
+};

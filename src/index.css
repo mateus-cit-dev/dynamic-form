@@ -43,8 +43,6 @@ select {
   padding: 10px;
   border-radius: 5px;
   flex: 1;
-  background: #FFFFFF;
-  border: 2px solid black;
   outline: none;
   margin: 10px 0;
 }

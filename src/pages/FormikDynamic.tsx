@@ -1,8 +1,8 @@
 import { Form, Formik } from "formik"
 import { CustomCheckBox, CustomRadioGroup, CustomTextInput, CustomSelect, Layout } from "../components"
-import { getInputs } from "../utils"
+import { getInputs, getRegisterInputs } from "../utils"
 
-const { initialValues, inputs, validationSchema } = getInputs('login')
+const { initialValues, inputs, validationSchema } = getRegisterInputs('Register')
 
 export const FormikDynamic = () => {
     return (
